@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gray-dark: #1F2937;
+  --charcoal: #2C3E50;
+  --gold: #D4AF37;
+}
+
+@layer base {
+  body {
+    @apply text-charcoal bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold;
+  }
+  
+  p {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+}
