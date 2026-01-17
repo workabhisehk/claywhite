@@ -87,7 +87,7 @@ export default function FractionalLeadershipPage() {
             <div className="bg-gray-50 rounded-lg p-8">
               <h3 className="text-2xl font-bold text-gray-dark mb-4">Why Fractional Leadership?</h3>
               <p className="text-charcoal mb-4">
-                Many growing companies need executive-level oversight but aren't ready for the full-time commitment and overhead of a C-suite hire. Our fractional model provides:
+                Many growing companies need executive-level oversight but aren&apos;t ready for the full-time commitment and overhead of a C-suite hire. Our fractional model provides:
               </p>
               <ul className="space-y-2 text-charcoal">
                 <li>• Immediate access to 20+ years of C-suite experience</li>

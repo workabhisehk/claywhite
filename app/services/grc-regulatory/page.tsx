@@ -85,7 +85,7 @@ export default function GRCRegulatoryPage() {
             <div className="mt-12">
               <h3 className="text-2xl font-bold text-gray-dark mb-4">Audit Readiness & Remediation</h3>
               <p className="text-charcoal mb-4">
-                We don't just check boxes—we build resilient compliance frameworks that support growth. Our approach includes:
+                We don&apos;t just check boxes—we build resilient compliance frameworks that support growth. Our approach includes:
               </p>
               <ul className="space-y-3 text-charcoal">
                 <li className="flex items-start">
