@@ -11,7 +11,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             <div className="relative h-10 w-10 flex-shrink-0">
               <Image
-                src="/images/wh-advisory-logo.svg"
+                src="/images/wh-advisory-logo.png"
                 alt=""
                 fill
                 className="object-contain"
@@ -44,11 +44,7 @@ export default function Header() {
               Contact
             </Link>
           </nav>
-          <div className="hidden lg:flex items-center space-x-2 text-sm text-gray-500">
-            <span>Dallas, TX</span>
-            <span>•</span>
-            <span>Orange County, CA</span>
-          </div>
+
         </div>
       </div>
     </header>

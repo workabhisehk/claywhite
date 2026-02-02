@@ -5,7 +5,6 @@ import ServicesOverview from "@/components/ServicesOverview";
 import CompanyServices from "@/components/CompanyServices";
 import TestimonialGrid from "@/components/TestimonialGrid";
 import SectorList from "@/components/SectorList";
-import Clients from "@/components/Clients";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
@@ -33,8 +32,8 @@ export default function Home() {
       <CompanyServices />
       <SectorList />
       <TestimonialGrid />
-      <Clients />
-      <CTA 
+
+      <CTA
         primaryText="Schedule a Strategy Audit"
         secondaryText="Explore GRC Frameworks"
         primaryHref="/contact"

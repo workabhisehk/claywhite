@@ -70,6 +70,7 @@ export const siteContent = {
           description: "Multi-role pod (e.g. COO + CCO + CRO), vendor risk management program, leadership hiring support",
         },
       ],
+      engagementAddOns: "Optional add-ons: privacy impact assessments, incident tabletop, RevOps pipeline rebuild.",
       solutions: [
         "Fractional leadership pods: CEO, COO, CCO/Compliance or Commercial, CRO—solo or blended, CIO, CISO",
         "GRC program build-out: governance charters, risk registers, privacy & security controls, vendor risk",
@@ -235,9 +236,15 @@ export const siteContent = {
       "Third-party risk and supply-chain exposure demand board-level oversight and culpability",
     ],
     roi: {
-      costSavings: "40-75% savings vs. full-time executives",
-      benchmark: "U.S. CFO median cash comp ~$269k → ~$350k+ fully-loaded with benefits. Fractional CFO retainers commonly $4k–$12k/mo",
-      timeToImpact: "Outcome-oriented sprints avoid 6–12 month exec hiring cycles",
+      math: "Total cost math: Benefits average ~30% of wages (BLS ECEC, 2025).",
+      benchmarks: {
+        title: "Benchmarks to frame savings:",
+        items: [
+          "U.S. CFO median cash comp ~$269k (Salary.com, Jul 2025) → ~$350k+ fully-loaded with benefits.",
+          "Fractional CFO retainers commonly $4k–$12k/mo",
+        ],
+      },
+      timeToImpact: "Time-to-impact: outcome-oriented sprints avoid 6–12 month exec hiring cycles",
     },
   },
   contact: {
