@@ -3,7 +3,7 @@ export const siteContent = {
     name: "Clay White",
     title: "CEO & Founder - CRMA, CRISC, CISA, CIA",
     bio: "Clay White is a seasoned executive with over 20 years of experience in the C-suite, specifically within the realms of Governance, Risk, and Compliance (GRC). His career spans leadership roles at Maximus, Title365, and Aseptic Technology. He is also the founder of Casablanca Cocktails LLC, showcasing an entrepreneurial spirit that informs his practical approach to business operations.",
-    locations: ["Dallas, Texas", "Orange County, California"],
+    locations: ["United States"],
     linkedIn: "https://www.linkedin.com/in/clay-white-227aa6345",
   },
   company: {
@@ -12,7 +12,7 @@ export const siteContent = {
   hero: {
     headline: "Executive\u00A0Leadership, exactly when you need it.",
     subheadline: "Fractional executive services delivering board-level strategy and operational leadership at a fraction of the cost. Companies are rethinking leadership as an on-demand resource, blending flexibility with deep expertise.",
-    primaryCTA: "Schedule a Strategy Audit",
+    primaryCTA: "Schedule a Consultation",
     secondaryCTA: "Explore GRC Frameworks",
   },
   stats: {
@@ -133,8 +133,9 @@ export const siteContent = {
       description: "Heavily regulated technology firms requiring robust compliance frameworks and SEC readiness.",
     },
     {
-      name: "Healthcare Technology",
-      description: "HIPAA compliance, CMS regulations, and healthcare data security for growing tech companies.",
+      name: "Title Insurance Companies",
+      description: "Operational leadership and compliance strategy for title, escrow, and real estate technology firms.",
+      highlight: true,
     },
     {
       name: "Beverage & Manufacturing",
@@ -248,19 +249,12 @@ export const siteContent = {
     },
   },
   contact: {
-    phone: "(949) 697-1685",
     formFields: {
       name: { label: "Name", required: true },
+      email: { label: "Email", required: true },
       company: { label: "Company", required: true },
       industry: { label: "Industry", required: false },
-      revenueRange: { label: "Revenue Range", required: false, options: ["< $1M", "$1M - $10M", "$10M - $50M", "$50M - $100M", "$100M+"] },
       challenge: { label: "Biggest Compliance Challenge", required: true, multiline: true },
     },
-    calendlyPlaceholder: "Calendly embed will be placed here",
-    nextSteps: [
-      "Discovery (45 min): priorities, constraints, risk hotspots",
-      "Scope & Sprint: pick 1–2 outcomes; align metrics and timeline",
-      "Kickoff: cadence, artifacts, owners, first wins in 30 days",
-    ],
   },
 };

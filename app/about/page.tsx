@@ -2,10 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { siteContent } from "@/content/site";
-import Timeline from "@/components/Timeline";
+
 import LogoCloud from "@/components/LogoCloud";
 
 import CTA from "@/components/CTA";
+import ChallengeInput from "@/components/ChallengeInput";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
@@ -34,17 +35,14 @@ export default function AboutPage() {
       <div>
         <section className="section-padding bg-white text-charcoal">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">About Clay White</h1>
-                <p className="text-xl text-gray-700 mb-4">
-                  {siteContent.principal.name}
-                </p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">Clay White</h1>
                 <p className="text-lg text-gray-600">
                   {siteContent.principal.title}
                 </p>
               </div>
-              <div className="relative h-[200px] lg:h-[250px] w-1/2 mx-auto rounded-lg overflow-hidden">
+              <div className="relative h-[350px] w-full max-w-xs mx-auto rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src="/images/clay-white.jpg"
                   alt="Clay White - Founder & Principal, WH Advisory Services"
@@ -123,11 +121,73 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <Timeline />
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-gray-dark mb-6">
+                {siteContent.services.fractional.title}
+              </h2>
+              <p className="text-xl text-gray-600 mb-12">
+                {siteContent.services.fractional.description}
+              </p>
+
+              <h2 className="text-3xl font-bold text-gray-dark mb-8">The Model</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                {siteContent.services.fractional.models.map((model, idx) => (
+                  <div key={idx} className="bg-white rounded-lg p-8 border-l-4 border-gold shadow-sm">
+                    <h3 className="text-2xl font-bold text-gray-dark mb-4">{model.role}</h3>
+                    <p className="text-charcoal">{model.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              <h2 className="text-3xl font-bold text-gray-dark mb-6">Benefits</h2>
+              <ul className="space-y-4 mb-12">
+                {siteContent.services.fractional.benefits.map((benefit, idx) => (
+                  <li key={idx} className="flex items-start">
+                    <span className="text-gold mr-3 text-2xl">✓</span>
+                    <div>
+                      <p className="text-lg text-charcoal font-semibold">{benefit}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="bg-white rounded-lg p-8 mb-12 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-dark mb-4">Customized Solutions</h3>
+                <ul className="space-y-3 text-charcoal">
+                  {siteContent.services.fractional.solutions?.map((solution, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="text-gold mr-3">•</span>
+                      <span>{solution}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <h2 className="text-3xl font-bold text-gray-dark mb-6">Engagement & Roadmaps</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                {siteContent.services.fractional.engagementModels?.map((model, idx) => (
+                  <div key={idx} className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold transition-colors">
+                    <h3 className="text-xl font-bold text-gray-dark mb-3">{model.name}</h3>
+                    <p className="text-charcoal">{model.description}</p>
+                  </div>
+                ))}
+              </div>
+              {siteContent.services.fractional.engagementAddOns && (
+                <div className="bg-white rounded-lg p-6 mb-12 border-l-4 border-charcoal shadow-sm">
+                  <p className="text-charcoal font-semibold">
+                    {siteContent.services.fractional.engagementAddOns}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
 
         <LogoCloud />
 
-
+        <ChallengeInput />
 
         <section className="section-padding bg-gray-50">
           <div className="container-custom">

@@ -1,17 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { siteContent } from "@/content/site";
 import { trackContactFormSubmit } from "@/lib/analytics";
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     company: "",
     industry: "",
-    revenueRange: "",
     challenge: "",
   });
+
+  useEffect(() => {
+    const challengeParam = searchParams.get("challenge");
+    if (challengeParam) {
+      setFormData((prev) => ({
+        ...prev,
+        challenge: challengeParam,
+      }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +61,20 @@ export default function ContactForm() {
           />
         </div>
         <div>
+          <label htmlFor="email" className="block text-charcoal font-semibold mb-2">
+            {fields.email.label} {fields.email.required && <span className="text-red-500">*</span>}
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required={fields.email.required}
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold"
+          />
+        </div>
+        <div>
           <label htmlFor="company" className="block text-charcoal font-semibold mb-2">
             {fields.company.label} {fields.company.required && <span className="text-red-500">*</span>}
           </label>
@@ -75,27 +101,7 @@ export default function ContactForm() {
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold"
           />
         </div>
-        {fields.revenueRange && fields.revenueRange.options && (
-          <div>
-            <label htmlFor="revenueRange" className="block text-charcoal font-semibold mb-2">
-              {fields.revenueRange.label}
-            </label>
-            <select
-              id="revenueRange"
-              name="revenueRange"
-              value={formData.revenueRange}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold"
-            >
-              <option value="">Select revenue range</option>
-              {fields.revenueRange.options.map((option, idx) => (
-                <option key={idx} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
+
         <div>
           <label htmlFor="challenge" className="block text-charcoal font-semibold mb-2">
             {fields.challenge.label} {fields.challenge.required && <span className="text-red-500">*</span>}

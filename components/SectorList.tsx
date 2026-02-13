@@ -12,9 +12,25 @@ export default function SectorList() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {siteContent.sectors.map((sector, idx) => (
-            <div key={idx} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-bold text-gray-dark mb-3">{sector.name}</h3>
-              <p className="text-charcoal text-sm">{sector.description}</p>
+            <div
+              key={idx}
+              className={`rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow ${
+                // @ts-ignore
+                sector.highlight ? 'bg-charcoal text-white transform scale-105 shadow-xl ring-4 ring-gray-200' : 'bg-white'
+                }`}
+            >
+              <h3 className={`text-xl font-bold mb-3 ${
+                // @ts-ignore
+                sector.highlight ? 'text-white' : 'text-gray-dark'
+                }`}>
+                {sector.name}
+              </h3>
+              <p className={
+                // @ts-ignore
+                sector.highlight ? 'text-gray-200 text-sm' : 'text-charcoal text-sm'
+              }>
+                {sector.description}
+              </p>
             </div>
           ))}
         </div>

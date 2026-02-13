@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import { siteContent } from "@/content/site";
 import ContactForm from "@/components/ContactForm";
 
@@ -36,58 +37,11 @@ export default function ContactPage() {
 
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <div>
-              <ContactForm />
-            </div>
-            <div>
-              <div className="bg-white rounded-lg p-8 shadow-lg">
-                <h2 className="text-2xl font-bold text-gray-dark mb-6">Schedule a Call</h2>
-                {siteContent.contact.phone && (
-                  <div className="mb-6">
-                    <p className="text-charcoal mb-2 font-semibold">Phone:</p>
-                    <a href={`tel:${siteContent.contact.phone}`} className="text-gold hover:text-gold-dark text-xl font-semibold">
-                      {siteContent.contact.phone}
-                    </a>
-                  </div>
-                )}
-                <div className="bg-gray-50 rounded-lg p-8 text-center min-h-[400px] flex items-center justify-center">
-                  <div>
-                    <p className="text-charcoal mb-4">
-                      {siteContent.contact.calendlyPlaceholder}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Calendly embed can be added here
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {siteContent.contact.nextSteps && (
-                <div className="mt-8 bg-white rounded-lg p-8 shadow-lg">
-                  <h3 className="text-xl font-bold text-gray-dark mb-4">Next Steps</h3>
-                  <ol className="space-y-3 text-charcoal">
-                    {siteContent.contact.nextSteps.map((step, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="text-gold mr-3 font-bold">{idx + 1}.</span>
-                        <span>{step}</span>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
-              
-              <div className="mt-8 bg-white rounded-lg p-8 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-dark mb-4">Locations</h3>
-                <div className="space-y-3 text-charcoal">
-                  {siteContent.principal.locations.map((location, idx) => (
-                    <div key={idx} className="flex items-center">
-                      <span className="text-gold mr-2">📍</span>
-                      <span>{location}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Suspense fallback={<div>Loading form...</div>}>
+                <ContactForm />
+              </Suspense>
             </div>
           </div>
         </div>

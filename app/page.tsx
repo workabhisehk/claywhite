@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
+import ChallengeInput from "@/components/ChallengeInput";
 import ServicesOverview from "@/components/ServicesOverview";
 import CompanyServices from "@/components/CompanyServices";
 import TestimonialGrid from "@/components/TestimonialGrid";
@@ -28,13 +29,14 @@ export default function Home() {
     <>
       <Hero />
       <Stats />
+      <ChallengeInput />
       <ServicesOverview />
       <CompanyServices />
       <SectorList />
       <TestimonialGrid />
 
       <CTA
-        primaryText="Schedule a Strategy Audit"
+        primaryText="Schedule a Consultation"
         secondaryText="Explore GRC Frameworks"
         primaryHref="/contact"
         secondaryHref="/services/grc-regulatory"
